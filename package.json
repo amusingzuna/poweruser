@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon src/index.js",
     "start": "cross-env NODE_ENV=production ts-node src/index.js",
-    "deploy": "yarn && node src/module/deploy.js"
+    "deploy": "yarn && ts-node src/module/deploy.ts"
   },
 
   "dependencies": {
