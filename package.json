@@ -5,13 +5,10 @@
   "author": "Alexander <marius.a.mocanu@gmail.com>",
   "license": "MIT",
 
-  "imports": {
-    "#root/*": "./src/*"
-  },
+  "type": "module",
 
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node src/index.ts",
-    "build": "yarn && tsc",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "deploy": "yarn && ts-node src/module/deploy.ts"
   },
