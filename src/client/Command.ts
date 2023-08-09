@@ -1,4 +1,4 @@
-import { CommandInteraction, GuildMember, SlashCommandBuilder, PermissionResolvable, EmbedBuilder, EmbedData, APIEmbed } from "discord.js";
+import { CommandInteraction, GuildMember, SlashCommandBuilder, PermissionResolvable, EmbedBuilder, EmbedData, APIEmbed, RESTPostAPIApplicationCommandsJSONBody } from "discord.js";
 import { Server } from "./Server";
 
 enum Category {
@@ -18,14 +18,14 @@ type RunArguments = {
 type CommandRun = ({server, interaction, member}: RunArguments) => Promise<void>;
 
 type CommandArguments = {
-    data: SlashCommandBuilder,
+    data: RESTPostAPIApplicationCommandsJSONBody,
     permissions: PermissionResolvable,
     category: [Category],
     run: CommandRun
 };
 
 class Command {
-    public data: SlashCommandBuilder;
+    public data: RESTPostAPIApplicationCommandsJSONBody;
     public permissions: PermissionResolvable;
     public category: [Category];
     public run: CommandRun;

@@ -34,7 +34,7 @@ const restRequest: RESTPostAPIApplicationCommandsJSONBody[] = [];
 log(`deploying ${commands.length} commands`);
 for (const command of commands) {
     log(`deploying command: ${command.data.name}`);
-    restRequest.push(command.data.toJSON());
+    restRequest.push(command.data);
 }
 
 deploy(rest, restRequest);
