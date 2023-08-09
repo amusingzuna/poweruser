@@ -11,9 +11,10 @@ const ping: Command = new Command({
     category: [Category.Miscellaneous],
     permissions: [],
 
-    run: async ({ interaction }) => {
-        const embed: CommandEmbed = new CommandEmbed()
-        .setTitle(`pong! \`${interaction.createdTimestamp - Date.now()}ms\``);
+    run: async ({ interaction, member }) => {
+        const embed: CommandEmbed = new CommandEmbed();
+        embed.setMember(member);
+        embed.setTitle(`pong! \`${interaction.createdTimestamp - Date.now()}ms\``);
 
         await interaction.reply({ embeds: [embed] });
     }
