@@ -1,4 +1,4 @@
-import { CommandInteraction, GuildMember, SlashCommandBuilder, PermissionResolvable } from "discord.js";
+import { CommandInteraction, GuildMember, SlashCommandBuilder, PermissionResolvable, EmbedBuilder, EmbedData, APIEmbed } from "discord.js";
 import { Server } from "./Server";
 
 enum Category {
@@ -38,4 +38,18 @@ class Command {
     }
 };
 
-export { Command, Category };
+class CommandEmbed extends EmbedBuilder {
+    constructor(embedData?: EmbedData | APIEmbed | undefined) {
+      super(embedData)
+  
+      this.setColor(0x2fb553);
+      this.setTimestamp(Date.now());
+    }
+  
+    setMember(member: GuildMember) {
+      this.setFooter({ text: `Requested by ${member.user.tag}`, iconURL: `https://cdn.discordapp.com/avatars/${member.id}/${member.user.avatar}.png?size=256`});
+      return this;
+    }
+  }
+
+export { Command, Category, CommandEmbed };
