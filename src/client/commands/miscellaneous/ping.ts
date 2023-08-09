@@ -1,6 +1,6 @@
 import { SlashCommandBuilder } from "discord.js";
 
-import { Category, Command } from "@/client/Command";
+import { Category, Command, CommandEmbed } from "@/client/Command";
 
 const ping: Command = new Command({
     data: new SlashCommandBuilder()
@@ -11,7 +11,10 @@ const ping: Command = new Command({
     permissions: [],
 
     run: async ({ interaction }) => {
-        await interaction.reply({ content: "Test" });
+        const embed: CommandEmbed = new CommandEmbed()
+        .setTitle(`pong! \`${interaction.createdTimestamp - Date.now()}ms\``);
+
+        await interaction.reply({ embeds: [embed] });
     }
 })
 
