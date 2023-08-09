@@ -45,8 +45,6 @@ class Console {
             }
         });
     }
-
-    log = console.log
 };
 
 export { Console, Command };
