@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development esrun ./src/index.ts",
     "start": "cross-env NODE_ENV=production esrun ./src/index.ts",
-    "deploy": "yarn && ts-node src/module/deploy.ts"
+    "deploy": "yarn && esrun ./src/modules/deploy.ts"
   },
   "dependencies": {
     "@digitak/esrun": "^3.2.24",
