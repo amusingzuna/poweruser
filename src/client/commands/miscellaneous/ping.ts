@@ -17,6 +17,6 @@ const ping: Command = new Command({
 
         await interaction.reply({ embeds: [embed] });
     }
-})
+});
 
 export default ping;

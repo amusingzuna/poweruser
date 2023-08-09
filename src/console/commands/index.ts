@@ -7,6 +7,6 @@ import verbose from "./verbose";
 const index: Array<Command> = [
     exit,
     verbose
-]
+];
 
 export default index;

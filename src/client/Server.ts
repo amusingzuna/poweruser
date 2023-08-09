@@ -12,7 +12,7 @@ type ServerArguments = {
     client: Client,
     console: Console,
     commands: Collection<string, Command>
-}
+};
 
 class Server {
     public client: Client;
@@ -26,7 +26,7 @@ class Server {
             for (const command of commandFiles) {
                 commands.set(command.data.name, command);
                 log(`loaded command: ${command.data.name}`);
-            }
+            };
             
             log("finished loading commands");
             
@@ -51,6 +51,6 @@ class Server {
         log("logging into client");
         this.client.login(token);
     }
-}
+};
 
 export { Server };

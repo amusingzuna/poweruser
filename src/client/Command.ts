@@ -15,7 +15,7 @@ type RunArguments = {
     member: GuildMember
 }
 
-type CommandRun = ({server, interaction, member}: RunArguments) => Promise<void>;
+type CommandRun = ({ server, interaction, member }: RunArguments) => Promise<void>;
 
 type CommandArguments = {
     data: RESTPostAPIApplicationCommandsJSONBody,
@@ -30,7 +30,7 @@ class Command {
     public category: [Category];
     public run: CommandRun;
 
-    constructor({data, permissions, category, run}: CommandArguments) {
+    constructor({ data, permissions, category, run }: CommandArguments) {
         this.data = data;
         this.permissions = permissions;
         this.category = category;
@@ -40,16 +40,16 @@ class Command {
 
 class CommandEmbed extends EmbedBuilder {
     constructor(embedData?: EmbedData | APIEmbed | undefined) {
-      super(embedData)
-  
-      this.setColor(0x2fb553);
-      this.setTimestamp(Date.now());
+        super(embedData)
+
+        this.setColor(0x2fb553);
+        this.setTimestamp(Date.now());
     }
-  
+
     setMember(member: GuildMember) {
-      this.setFooter({ text: `Requested by ${member.user.tag}`, iconURL: `https://cdn.discordapp.com/avatars/${member.id}/${member.user.avatar}.png?size=256`});
-      return this;
+        this.setFooter({ text: `Requested by ${member.user.tag}`, iconURL: `https://cdn.discordapp.com/avatars/${member.id}/${member.user.avatar}.png?size=256` });
+        return this;
     }
-  }
+}
 
 export { Command, Category, CommandEmbed };

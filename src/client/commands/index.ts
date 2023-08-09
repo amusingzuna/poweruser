@@ -4,6 +4,6 @@ import ping from "./miscellaneous/ping";
 
 const index: Array<Command> = [
     ping
-]
+];
 
 export default index;

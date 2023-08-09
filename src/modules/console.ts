@@ -6,6 +6,6 @@ const log = (text: string) => {
         chalk.blueBright(`[log - ${date.toLocaleTimeString()}]`) +
         chalk.white(" " + text)
     );
-}
+};
 
 export { log };

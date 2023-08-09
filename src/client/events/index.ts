@@ -6,6 +6,6 @@ import interaction from "./interaction";
 const index: Array<ClientEvent> = [
     ready,
     interaction
-]
+];
 
 export default index;

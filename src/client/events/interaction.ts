@@ -32,7 +32,7 @@ const ready: ClientEvent = new ClientEvent({
         } catch (err) {
             console.trace(err);
             await interaction.reply({ content: "There was an error while executing this command. Report this to <@205656342789226496>", ephemeral: true });
-        }
+        };
     }
 });
 

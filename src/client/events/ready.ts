@@ -9,7 +9,7 @@ const ready: ClientEvent = new ClientEvent({
     async run({ server }) {
         if (process.env.NODE_ENV == "development") {
             log("silent - in development mode");
-        }
+        };
      
         server.client.user?.setActivity("Romanian Final Boss Theme Song", { type: ActivityType.Listening });
 

@@ -10,7 +10,7 @@ type CommandRun = ({server}: RunArguments) => Promise<any> | any;
 type CommandArguments = {
     name: string,
     run: CommandRun
-}
+};
 
 class Command {
     public name: string;

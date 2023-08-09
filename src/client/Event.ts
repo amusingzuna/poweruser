@@ -9,7 +9,7 @@ type CommandRun = ({server}: RunArguments, ...args: any[]) => Promise<any>;
 type ClientEventArguments = {
     type: string,
     run: CommandRun
-}
+};
 
 class ClientEvent {
     public type: string;
@@ -19,6 +19,6 @@ class ClientEvent {
         this.type = type;
         this.run = run;
     }
-}
+};
 
 export { ClientEvent };
