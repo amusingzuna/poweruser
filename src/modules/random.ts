@@ -19,10 +19,6 @@ class Random {
             total += occurence.chance;
         });
 
-        // perform sanity check
-        if(total != 1)
-            throw new Error("Total chance does not equal to 1 / 100%");
-
         this.occurences = occurences;
     }
 
