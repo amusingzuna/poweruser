@@ -4,7 +4,7 @@ import { Category, Command, CommandEmbed } from "@/client/Command";
 
 import { Random } from "@/modules/random";
 
-const coinflipRandomizer = new Random([
+const coinflipMachine = new Random([
     { name: "heads", chance: 0.495 },
     { name: "the side", chance: 0.01 },
     { name: "tails", chance: 0.495 }
@@ -22,7 +22,7 @@ const coinflip: Command = new Command({
     run: async ({ interaction, member }) => {
         const embed: CommandEmbed = new CommandEmbed();
         embed.setMember(member);
-        embed.setTitle(`Your coin landed on... \`${coinflipRandomizer.pull()?.name}\``);
+        embed.setTitle(`Your coin landed on... \`${coinflipMachine.pull()?.name}\``);
 
         await interaction.reply({ embeds: [embed] });
     }
