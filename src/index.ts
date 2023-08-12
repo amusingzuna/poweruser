@@ -4,7 +4,6 @@ import { config } from "dotenv";
 import { Console } from "@/console/Console";
 import { Server } from "@/client/Server";
 import { Command } from "@/client/Command";
-import { AudioPlayer } from "@/audio/AudioPlayer";
 
 config();
 
@@ -17,7 +16,6 @@ const client = new Client({ intents: [
     GatewayIntentBits.GuildVoiceStates,
     GatewayIntentBits.DirectMessages
 ]});
-const audioPlayer = new AudioPlayer(client);
 
-const server: Server = new Server({ client, console, commands, audioPlayer });
+const server: Server = new Server({ client, console, commands });
 server.login(process.env.DISCORD_TOKEN);
