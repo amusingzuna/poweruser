@@ -10,7 +10,7 @@ const token: string | null = process.env.DISCORD_TOKEN || null;
 const clientId: string | null = process.env.CLIENT_ID || null;
 
 if(token == null)
-    throw new Error(".env file is missing or has no TOKEN id");
+    throw new Error(".env file is missing or has no DISCORD_TOKEN id");
 
 if(clientId == null)
     throw new Error(".env file is missing or has no CLIENT_ID id");
