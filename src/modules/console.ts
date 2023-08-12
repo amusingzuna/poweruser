@@ -8,4 +8,12 @@ const log = (text: string) => {
     );
 };
 
-export { log };
+const error = (text: string) => {
+    const date = new Date();
+    console.log(
+        chalk.bgRedBright(`[error - ${date.toLocaleTimeString()}]`) +
+        chalk.redBright(" " + text)
+    );
+};
+
+export { log, error };
