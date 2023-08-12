@@ -11,7 +11,7 @@ class AudioPlayer {
     constructor(client: Client) {
         this.daemon = new MusicDaemon(client);
 
-        log("loading client events");
+        log("loading player events");
         
         for (const playerEvent of events) {
             this.daemon.on(playerEvent.type as PlayerEvent, (...args: any[]): any => {
@@ -20,7 +20,7 @@ class AudioPlayer {
             log(`loaded player event: ${playerEvent.type}`);
         }
         
-        log("finished loading client events");
+        log("finished loading player events");
     }
 };
 
