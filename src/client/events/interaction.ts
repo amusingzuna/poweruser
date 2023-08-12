@@ -11,8 +11,7 @@ const ready: ClientEvent = new ClientEvent({
         if(!interaction?.isChatInputCommand()) return;
 
         try {
-            // @ts-ignore
-            let member: GuildMember = interaction.member;
+            let member: GuildMember = interaction.member as GuildMember;
 
             let command = server.commands.get(interaction.commandName);
 
