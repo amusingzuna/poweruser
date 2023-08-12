@@ -22,7 +22,7 @@ const ready: ClientEvent = new ClientEvent({
                 if(!member?.permissions.has(command.permissions))
                     return interaction.reply({ content: "You do not have the permissions required to execute this command!", ephemeral: true });
     
-                if(command.category.includes(Category.Debug) && member.id !== process.env.OWNER_ID)
+                if(command.category.includes(Category.Debug) && member.id !== server.client.application?.owner?.id)
                     return interaction.reply({ content: "This is a developer-only command!", ephemeral: true });
     
                 if(command.category.includes(Category.Music) && !member.voice.channel)
