@@ -1,4 +1,4 @@
-import { CommandInteraction, GuildMember, SlashCommandBuilder, PermissionResolvable, EmbedBuilder, EmbedData, APIEmbed, RESTPostAPIApplicationCommandsJSONBody } from "discord.js";
+import { CommandInteraction, GuildMember, PermissionResolvable, EmbedBuilder, EmbedData, APIEmbed, RESTPostAPIApplicationCommandsJSONBody } from "discord.js";
 import { Server } from "./Server";
 
 enum Category {
